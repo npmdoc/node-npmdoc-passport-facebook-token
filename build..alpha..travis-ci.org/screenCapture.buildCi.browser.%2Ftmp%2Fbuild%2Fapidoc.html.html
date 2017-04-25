@@ -1,0 +1,118 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/drudge/passport-facebook-token#readme">passport-facebook-token (v3.3.0)</a>
+</h1>
+<h4>Facebook token authentication strategy for Passport</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.passport-facebook-token">module passport-facebook-token</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.passport-facebook-token.passport-facebook-token">
+            function <span class="apidocSignatureSpan"></span>passport-facebook-token
+            <span class="apidocSignatureSpan">(_options, _verify)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.passport-facebook-token" id="apidoc.module.passport-facebook-token">module passport-facebook-token</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.passport-facebook-token.passport-facebook-token" id="apidoc.element.passport-facebook-token.passport-facebook-token">
+        function <span class="apidocSignatureSpan"></span>passport-facebook-token
+        <span class="apidocSignatureSpan">(_options, _verify)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FacebookTokenStrategy(_options, _verify) {
+  _classCallCheck(this, FacebookTokenStrategy);
+
+  var options = _options || {};
+  var verify = _verify;
+  var _fbGraphVersion = options.fbGraphVersion || 'v2.6';
+
+  options.authorizationURL = options.authorizationURL || 'https://www.facebook.com/' + _fbGraphVersion + '/dialog/oauth';
+  options.tokenURL = options.tokenURL || 'https://graph.facebook.com/' + _fbGraphVersion + '/oauth/access_token';
+
+  var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(FacebookTokenStrategy).call(this, options, verify));
+
+  _this.name = 'facebook-token';
+  _this._accessTokenField = options.accessTokenField || 'access_token';
+  _this._refreshTokenField = options.refreshTokenField || 'refresh_token';
+  _this._profileURL = options.profileURL || 'https://graph.facebook.com/' + _fbGraphVersion + '/me';
+  _this._profileFields = options.profileFields || ['id', 'displayName', 'name', 'emails'];
+  _this._profileImage = options.profileImage || {};
+  _this._clientSecret = options.clientSecret;
+  _this._enableProof = typeof options.enableProof === 'boolean' ? options.enableProof : true;
+  _this._passReqToCallback = options.passReqToCallback;
+  _this._oauth2.useAuthorizationHeaderforGET(false);
+  _this._fbGraphVersion = _fbGraphVersion;
+  return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
